@@ -466,7 +466,7 @@ $(ColorGreen '5)') Install HaProxy
 $(ColorGreen '6)') Uninstall PostgreSQL
 $(ColorGreen '7)') Uninstall MongoDB
 $(ColorGreen '8)') Uninstall HaProxy
-$(ColorGreen '9)') Allow $USER to call sudo with no password
+$(ColorGreen '9)') Allow sudoers use sudo with no password
 $(ColorGreen '10)') Chekc all
 $(ColorGreen 'Q)') Exit (Q/q)
 $(ColorBlue 'Choose an option:') "
@@ -502,4 +502,5 @@ $(ColorBlue 'Choose an option:') "
 }
 
 # Call the menu function
+clear
 menu

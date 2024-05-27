@@ -169,7 +169,7 @@ function mongodb_install_with_access_control() {
 			sudo apt-get update -y
 			sudo apt-get upgrade -y
 			sudo apt-get autoremove -y		
-			sudo apt-get install gnupg curl
+			sudo apt-get install gnupg curl gpg -y
 			### Adding repositories and keys, removing old repositories
 			echo -e "\nRemoving previous repositories for Mongo"
 			sudo rm /etc/apt/sources.list.d/mongodb*

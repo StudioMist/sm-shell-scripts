@@ -173,9 +173,12 @@ function mongodb_install_with_access_control() {
 			### Adding repositories and keys, removing old repositories
 			echo -e "\nRemoving previous repositories for Mongo"
 			sudo rm /etc/apt/sources.list.d/mongodb*
-			curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o -y /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
-			echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-			sleep 2s			
+			#curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o -y /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+			curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+			#echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+			#echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+			echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+   			sleep 2s			
 			clear
 			echo -e "\nUpdating system"
 			sudo apt-get update -y
@@ -257,9 +260,12 @@ function mongodb_install() {
 			### Adding repositories and keys, removing old repositories
 			echo -e "\nRemoving previous repositories for Mongo"
 			sudo rm /etc/apt/sources.list.d/mongodb*
-			curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o -y /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
-			echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-			sleep 2s			
+			#curl -fsSL https://pgp.mongodb.com/server-7.0.asc | sudo gpg -o -y /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+			curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | sudo gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
+			#echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+			#echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+			echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/7.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+   			sleep 2s
 			clear
 			echo -e "\nUpdating system"
 			sudo apt-get update -y
